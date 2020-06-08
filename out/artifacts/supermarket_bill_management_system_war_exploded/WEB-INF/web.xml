@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!--配置主页-->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>LogInServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.LogInServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogInServlet</servlet-name>
+        <url-pattern>/LogInServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QueryProvidersServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.QueryProvidersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryProvidersServlet</servlet-name>
+        <url-pattern>/QueryProvidersServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddProviderServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.AddProviderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddProviderServlet</servlet-name>
+        <url-pattern>/AddProviderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QueryProviderServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.QueryProviderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryProviderServlet</servlet-name>
+        <url-pattern>/QueryProviderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateProviderServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.UpdateProviderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateProviderServlet</servlet-name>
+        <url-pattern>/UpdateProviderServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteProviderServlet</servlet-name>
+        <servlet-class>com.smbs.ctrl.DeleteProviderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteProviderServlet</servlet-name>
+        <url-pattern>/DeleteProviderServlet</url-pattern>
+    </servlet-mapping>
+
+</web-app>
