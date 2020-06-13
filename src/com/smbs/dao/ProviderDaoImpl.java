@@ -1,7 +1,6 @@
 package com.smbs.dao;
 
 import com.smbs.entity.SuperProviders;
-import com.smbs.entity.SuperUsers;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -135,6 +134,32 @@ public class ProviderDaoImpl implements ProviderDao {
             System.err.println("建立通道失败!");
         } finally {
             MySQLConnector.closeConnection(resultSet, statement, connection);
+        }
+        return list;
+    }
+
+    @Override
+    public List<SuperProviders> search(String search_name, String search_desc) {
+        List<SuperProviders> list = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        SuperProviders provider;
+        String sql = "select * from superproviders where providername like ? and providerdesc like ?";
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "%"+search_name+"%");
+            preparedStatement.setString(2, "%"+search_desc+"%");
+            resultSet =preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                provider = new SuperProviders(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
+                        resultSet.getString(4), resultSet.getString(5), resultSet.getString(6),
+                        resultSet.getString(7));
+                list.add(provider);
+            }
+        } catch (SQLException e) {
+            System.err.println("建立通道失败!");
+        } finally {
+            MySQLConnector.closeConnection(resultSet, preparedStatement, connection);
         }
         return list;
     }

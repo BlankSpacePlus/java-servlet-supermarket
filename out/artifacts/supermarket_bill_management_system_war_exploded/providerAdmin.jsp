@@ -22,7 +22,7 @@
 <div class="menu">
 
     <table>
-        <tbody><tr><td><form method="post" action="provider.do">
+        <tbody><tr><td><form method="post" action="SearchProvidersServlet">
             <input name="flag" value="search" type="hidden">
             供应商名称：<input name="providerName" class="input-text" type="text"> &nbsp;&nbsp;&nbsp;&nbsp;供应商描述：<input name="providerDesc" class="input-text" type="text">&nbsp;&nbsp;&nbsp;&nbsp;<input value="组 合 查 询" type="submit">
         </form></td></tr>

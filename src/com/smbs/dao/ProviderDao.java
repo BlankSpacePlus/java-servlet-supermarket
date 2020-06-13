@@ -1,7 +1,6 @@
 package com.smbs.dao;
 
 import com.smbs.entity.SuperProviders;
-import com.smbs.entity.SuperUsers;
 
 import java.util.List;
 
@@ -16,6 +15,8 @@ public interface ProviderDao {
     SuperProviders  getProviderById(String id);
 
     List<SuperProviders> getAllProviders();
+
+    List<SuperProviders> search(String search_name, String search_desc);
 
 }
 
