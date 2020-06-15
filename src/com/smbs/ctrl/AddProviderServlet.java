@@ -22,7 +22,7 @@ public class AddProviderServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String datetime = sdf.format(new Date());
         SuperProviders provider = new SuperProviders();
         provider.setProviderName(request.getParameter("proName"));

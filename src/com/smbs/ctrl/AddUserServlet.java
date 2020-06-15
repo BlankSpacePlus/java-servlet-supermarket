@@ -21,17 +21,13 @@ public class AddUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SuperUsers superUsers=new SuperUsers();
         request.setCharacterEncoding("utf-8");
-        String name=request.getParameter("username");
-        String pwd=request.getParameter("password");
-        String phone=request.getParameter("userphone");
-        String address=request.getParameter("address");
+        String name=request.getParameter("auth");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        int role=Integer.parseInt(request.getParameter("auth"));
-        superUsers.setUserName(name);
-        superUsers.setPassWord(pwd);
-        superUsers.setPhone(phone);
-        superUsers.setAddress(address);
-        superUsers.setRole(role);
+        superUsers.setUserName(request.getParameter("username"));
+        superUsers.setPassWord(request.getParameter("password"));
+        superUsers.setPhone(request.getParameter("userphone"));
+        superUsers.setAddress(request.getParameter("address"));
+        superUsers.setRole(Integer.parseInt(name));
         superUsers.setUserID(name);
         try {
             Date birthday=simpleDateFormat.parse(request.getParameter("birthday"));
